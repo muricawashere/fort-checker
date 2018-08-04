@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include ../partials/showstathead %>
+        <title>Loading...</title>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <div id="kills"></div>
+        <div id="k/d"></div>
+        <div id="wins"></div>
+        <div id="winper"></div>
+        <div id="matches"></div>
+    </body>
+</html>
+<script>
+    var type = '<%- type %>'
+    var data = JSON.parse('<%- data %>')
+    document.title = `${data.info.username}`
+    console.log(data)
+    var setKills = document.getElementById("kills").innerHTML
+    var setKD = document.getElementById("k/d").innerHTML
+    var setWins = document.getElementById("wins").innerHTML
+    var setWinPer = document.getElementById("winper").innerHTML
+    var setMatches = document.getElementById("matches").innerHTML
+    if(type == 'solo') {
+        document.getElementById("kills").innerHTML = `Kills: ${data.group.solo.kills}`
+        document.getElementById("k/d").innerHTML = `K/D: ${data.group.solo['k/d']}`
+        document.getElementById("wins").innerHTML = `Wins: ${data.group.solo.wins}`
+        document.getElementById("winper").innerHTML = `Win%: ${data.group.solo['win%']}`
+        document.getElementById("matches").innerHTML = `Matches: ${data.group.solo.matches}`
+    } else if(type == 'duo') {
+        document.getElementById("kills").innerHTML = `Kills: ${data.group.duo.kills}`
+        document.getElementById("k/d").innerHTML = `K/D: ${data.group.duo['k/d']}`
+        document.getElementById("wins").innerHTML = `Wins: ${data.group.duo.wins}`
+        document.getElementById("winper").innerHTML = `Win%: ${data.group.duo['win%']}`
+        document.getElementById("matches").innerHTML = `Matches: ${data.group.duo.matches}`
+    } else if(type == 'squad') {
+        document.getElementById("kills").innerHTML = `Kills: ${data.group.squad.kills}`
+        document.getElementById("k/d").innerHTML = `K/D: ${data.group.squad['k/d']}`
+        document.getElementById("wins").innerHTML = `Wins: ${data.group.squad.wins}`
+        document.getElementById("winper").innerHTML = `Win%: ${data.group.squad['win%']}`
+        document.getElementById("matches").innerHTML = `Matches: ${data.group.squad.matches}`
+    } else {
+
+    }
+</script>

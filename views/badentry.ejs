@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include ../partials/showstathead %>
+        <title>Error</title>
+    </head>
+    <body>
+        <h1>Oh No</h1>
+        <p>
+            Something happened heres what we know: <br><%= error %>
+            <form method="GET" action="/">
+                <input type='submit' value='Return to home'>
+            </form>
+        </p>
+    </body>
+</html>

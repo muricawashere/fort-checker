@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include ../partials/head %>
+    </head>
+    <body>
+        <h1>hi</h1>
+        <p>
+            <form id="username" method="POST" action="/checkstat">
+                <input type="text" name="username" placeholder="Username">
+                <select name="type">
+                    <option value="solo">Solo</option>
+                    <option value="duo">Duo</option>
+                    <option value="squad">Squad</option>
+                    <option value="all">All</option>
+                </select>
+                <select name="plat">
+                    <option value="ps4">PS4</option>
+                    <option value="pc">PC</option>
+                    <option value="xb1">XBOX ONE</option>
+                </select>
+                <input type='submit' value='Check'>
+            </form>
+        </p>
+    </body>
+</html>
