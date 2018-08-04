@@ -42,6 +42,10 @@
         document.getElementById("winper").innerHTML = `Win%: ${data.group.squad['win%']}`
         document.getElementById("matches").innerHTML = `Matches: ${data.group.squad.matches}`
     } else {
-
+        document.getElementById("kills").innerHTML = `Kills: ${data.lifetimeStats.kills}`
+        document.getElementById("k/d").innerHTML = `K/D: ${data.lifetimeStats['k/d']}`
+        document.getElementById("wins").innerHTML = `Wins: ${data.lifetimeStats.wins}`
+        document.getElementById("winper").innerHTML = `Win%: ${data.lifetimeStats['win%']}`
+        document.getElementById("matches").innerHTML = `Matches: ${data.lifetimeStats.matches}`
     }
 </script>
